@@ -20,7 +20,7 @@ export class DishesDal {
         return alreadyExistsError
       }
       const response = await Dishes.create(dish);
-      const findResult2 = await Restaurants.findOne({ name: dish.restaurant}).updateOne({
+      await Restaurants.findOne({ name: dish.restaurant}).updateOne({
         $push: { dishes: dish._id },
       });
       return response;
