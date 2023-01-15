@@ -1,4 +1,4 @@
-import express = require("express");
+const express = require("express");
 import chefsRoutes from "./chefs.routes";
 import restaurantsRoutes from "./restaurants.routes";
 import dishesRoutes from "./dishes.routes";
