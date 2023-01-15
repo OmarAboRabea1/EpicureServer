@@ -13,7 +13,7 @@ export class RestaurantsDal {
     });
 
     const response = await Restaurants.create(restaurant);
-    await Chefs.findOne({ name: response.chef }).updateOne({
+    const result = await Chefs.findOne({ name: response.chef }).updateOne({
       $push: { restaurants: response._id },
     });
     return response;
